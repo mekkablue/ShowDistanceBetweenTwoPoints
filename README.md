@@ -2,7 +2,7 @@
 
 This is a plugin for the [Glyphs font editor](http://glyphsapp.com/) by Georg Seifert.
 It displays the distance between two selected nodes when exactly two points are selected, ignoring intersections in between.
-After installation, it will add the menu item *View > Show Distance between Two Points* (German: *Zeige Abstand zwischen zwei Punkten*, French: *Montre distance entre deux points*).
+After installation, it will add the menu item *View > Show Distance between Two Points* (German: *Abstand zwischen zwei Punkten anzeigen*, French: *Afficher distance entre deux points*).
 You can set a keyboard shortcut in System Preferences.
 
 ![Distance between two selected nodes.](ShowDistanceBetweenTwoPoints.png "Show Distance between Two Points Screenshot")
