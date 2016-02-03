@@ -12,7 +12,7 @@
 ###########################################################################################################
 
 
-from GlyphsPlugins import *
+from GlyphsApp.plugins import *
 import math
 
 class ShowDistanceBetweenTwoPoints(ReporterPlugin):
