@@ -74,8 +74,11 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 				middle = NSPoint( (node1.x+node2.x)*0.5, (node1.y+node2.y)*0.5 )
 				typeSize = 12.0
 				scaledSize = typeSize / scale
-				self.drawRoundedRectangleForStringAtPosition( distanceString, middle, typeSize )
-				self.drawTextAtPoint( distanceString, middle, fontColor=fontColor, align='center', fontSize=typeSize )
+				
+				if Glyphs.buildNumber == 965:
+					distanceNSString = NSString.alloc().initWithString_(distanceString) #
+					distanceNSString.drawBadgeAtPoint_size_color_backgroundColor_alignment_visibleInRect_( middle, scaledSize, fontColor, drawingColor, 3, NSMakeRect(NSNotFound, 0, 0, 0) )
+				else:
+					self.drawRoundedRectangleForStringAtPosition( distanceString, middle, typeSize )
+					self.drawTextAtPoint( distanceString, middle, fontColor=fontColor, align='center', fontSize=typeSize )
 
-
-		
