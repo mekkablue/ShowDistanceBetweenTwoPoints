@@ -12,6 +12,7 @@
 ###########################################################################################################
 
 
+from GlyphsApp import GSNode
 from GlyphsApp.plugins import *
 import math
 
