@@ -1,4 +1,5 @@
 # encoding: utf-8
+from __future__ import division, print_function, unicode_literals
 
 ###########################################################################################################
 #
@@ -11,21 +12,24 @@
 #
 ###########################################################################################################
 
-
-from GlyphsApp import GSNode
+import objc
+from GlyphsApp import *
 from GlyphsApp.plugins import *
-import math
+from math import hypot
 
 class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 
+	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': 'Distance between Two Points',
 			'es': 'Distancia entre dos puntos',
 			'de': 'Abstand zwischen zwei Punkten', 
-			'fr': 'distance entre deux points'
+			'fr': 'distance entre deux points',
+			'pt': 'distância entre dois pontos',
 		})
 	
+	@objc.python_method
 	def roundDotForPoint( self, thisPoint, markerWidth ):
 		"""
 		Returns a circle with thisRadius around thisPoint.
@@ -33,6 +37,7 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 		myRect = NSRect( ( thisPoint.x - markerWidth * 0.5, thisPoint.y - markerWidth * 0.5 ), ( markerWidth, markerWidth ) )
 		return NSBezierPath.bezierPathWithOvalInRect_(myRect)
 
+	@objc.python_method
 	def drawRoundedRectangleForStringAtPosition(self, thisString, center, fontsize):
 		scaledSize = fontsize / self.getScale()
 		width = len(thisString) * scaledSize * 0.7
@@ -44,7 +49,7 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 		
 		NSBezierPath.bezierPathWithRoundedRect_xRadius_yRadius_( panel, scaledSize*0.5, scaledSize*0.5 ).fill()
 		
-	
+	@objc.python_method
 	def foreground(self, layer):
 		currentSelection = layer.selection
 		if currentSelection and len(currentSelection) == 2:
@@ -70,7 +75,7 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 				# dots.stroke()
 				
 				# write measurement:
-				distance = math.hypot( node1.x - node2.x, node1.y - node2.y )
+				distance = hypot( node1.x - node2.x, node1.y - node2.y )
 				distanceString = "%.1f" % distance
 				middle = NSPoint( (node1.x+node2.x)*0.5, (node1.y+node2.y)*0.5 )
 				typeSize = 12.0
@@ -83,3 +88,7 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 					self.drawRoundedRectangleForStringAtPosition( distanceString, middle, typeSize )
 					self.drawTextAtPoint( distanceString, middle, fontColor=fontColor, align='center', fontSize=typeSize )
 
+	@objc.python_method
+	def __file__(self):
+		"""Please leave this method unchanged"""
+		return __file__
