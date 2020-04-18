@@ -23,7 +23,7 @@ class ShowDistanceBetweenTwoPoints(ReporterPlugin):
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': 'Distance between Two Points',
-			'es': 'Distancia entre dos puntos',
+			'es': 'distancia entre dos puntos',
 			'de': 'Abstand zwischen zwei Punkten', 
 			'fr': 'distance entre deux points',
 			'pt': 'distância entre dois pontos',
