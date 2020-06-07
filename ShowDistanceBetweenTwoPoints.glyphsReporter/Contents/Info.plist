@@ -13,15 +13,15 @@
 	<key>CFBundleName</key>
 	<string>ShowDistanceBetweenTwoPoints</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>2.0.1</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/ShowDistanceBetweenTwoPoints/master/ShowDistanceBetweenTwoPoints.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/ShowDistanceBetweenTwoPoints</string>
 	<key>productReleaseNotes</key>
-	<string>Glyphs 3 compatibility.</string>
+	<string>Updated plugin binary.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Rainer Erich Scheichelbauer, 2016</string>
 	<key>NSPrincipalClass</key>
